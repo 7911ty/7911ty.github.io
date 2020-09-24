@@ -1,0 +1,48 @@
+2020-09-24 14:31:29.647  INFO 5188 --- [restartedMain] com.lty.BlogApplication                  : Starting BlogApplication on LAPTOP-JL2NF7R2 with PID 5188 (D:\studyjava\springboot\blog\target\classes started by lty in D:\studyjava\springboot\blog)
+2020-09-24 14:31:29.669  INFO 5188 --- [restartedMain] com.lty.BlogApplication                  : The following profiles are active: dev
+2020-09-24 14:31:29.819  INFO 5188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-24 14:31:29.819  INFO 5188 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-24 14:31:30.979  INFO 5188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-24 14:31:31.114  INFO 5188 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123ms. Found 5 JPA repository interfaces.
+2020-09-24 14:31:32.267  INFO 5188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-24 14:31:32.284  INFO 5188 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-24 14:31:32.285  INFO 5188 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-09-24 14:31:32.501  INFO 5188 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-24 14:31:32.501  INFO 5188 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2676 ms
+2020-09-24 14:31:32.876  INFO 5188 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-24 14:31:32.935  INFO 5188 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-24 14:31:33.000  INFO 5188 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-09-24 14:31:33.136  WARN 5188 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-24 14:31:33.244  INFO 5188 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-24 14:31:33.418  INFO 5188 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-24 14:31:33.703  INFO 5188 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-24 14:31:33.732  INFO 5188 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-09-24 14:31:33.780  INFO 5188 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-24 14:31:34.461  INFO 5188 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-24 14:31:34.566  INFO 5188 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-24 14:31:34.569  INFO 5188 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-24 14:31:35.367  INFO 5188 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-24 14:31:35.378  INFO 5188 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 14:31:36.267  INFO 5188 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-24 14:31:36.279  INFO 5188 --- [restartedMain] com.lty.BlogApplication                  : Started BlogApplication in 7.377 seconds (JVM running for 11.972)
+2020-09-24 14:31:52.679  INFO 5188 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-24 14:31:52.679  INFO 5188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-24 14:31:52.698  INFO 5188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-09-24 14:31:52.787  INFO 5188 --- [http-nio-8080-exec-1] com.lty.aspect.LogAspect                 : Requset : RequestLog{url='http://127.0.0.1:8080/', ip='127.0.0.1', classMethod='com.lty.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2020-09-24 14:31:52.957  WARN 5188 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-24 14:31:52.979  WARN 5188 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-24 14:31:52.985  INFO 5188 --- [http-nio-8080-exec-1] com.lty.aspect.LogAspect                 : Result : index
+2020-09-24 14:32:16.816  INFO 5188 --- [http-nio-8080-exec-9] com.lty.aspect.LogAspect                 : Requset : RequestLog{url='http://127.0.0.1:8080/', ip='127.0.0.1', classMethod='com.lty.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2020-09-24 14:32:16.833  INFO 5188 --- [http-nio-8080-exec-9] com.lty.aspect.LogAspect                 : Result : index
+2020-09-24 14:32:39.007  INFO 5188 --- [http-nio-8080-exec-10] com.lty.aspect.LogAspect                 : Requset : RequestLog{url='http://127.0.0.1:8080/blog/24', ip='127.0.0.1', classMethod='com.lty.web.IndexController.blog', args=[24, {}]}
+2020-09-24 14:32:39.092  INFO 5188 --- [http-nio-8080-exec-10] com.lty.aspect.LogAspect                 : Result : blog
+2020-09-24 14:32:39.960  INFO 5188 --- [http-nio-8080-exec-1] com.lty.aspect.LogAspect                 : Requset : RequestLog{url='http://127.0.0.1:8080/comments/24', ip='127.0.0.1', classMethod='com.lty.web.CommentController.comments', args=[24, {}]}
+2020-09-24 14:32:40.002  INFO 5188 --- [http-nio-8080-exec-1] com.lty.aspect.LogAspect                 : Result : blog :: commentList
+2020-09-24 14:32:53.149  INFO 5188 --- [http-nio-8080-exec-2] com.lty.aspect.LogAspect                 : Requset : RequestLog{url='http://127.0.0.1:8080/about', ip='127.0.0.1', classMethod='com.lty.web.IndexController.about', args=[]}
+2020-09-24 14:32:53.149  INFO 5188 --- [http-nio-8080-exec-2] com.lty.aspect.LogAspect                 : Result : about
+2020-09-24 14:32:56.887  INFO 5188 --- [http-nio-8080-exec-7] com.lty.aspect.LogAspect                 : Requset : RequestLog{url='http://127.0.0.1:8080/comments/24', ip='127.0.0.1', classMethod='com.lty.web.CommentController.comments', args=[24, {}]}
+2020-09-24 14:32:56.895  INFO 5188 --- [http-nio-8080-exec-7] com.lty.aspect.LogAspect                 : Result : blog :: commentList
+2020-09-24 14:34:20.295  INFO 5188 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-24 14:34:20.297  INFO 5188 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-24 14:34:20.299  INFO 5188 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-24 14:34:20.318  INFO 5188 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
