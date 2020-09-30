@@ -2,6 +2,7 @@ package com.lty.service;
 
 import com.lty.NotFoundException;
 import com.lty.dao.BlogRepository;
+import com.lty.dao.CommentRepository;
 import com.lty.po.Blog;
 import com.lty.po.Type;
 import com.lty.util.MarkdownUtils;
@@ -30,6 +31,8 @@ public class BlogServiceImpl implements BlogService {
 
     @Autowired
     private BlogRepository blogRepository;
+    @Autowired
+    private CommentRepository commentRepository;
 
     @Transactional
     @Override
@@ -123,6 +126,8 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public void deleteBlog(Long id) {
+        //删除博客之前先删除评论，否则会有外键冲突
+        commentRepository.deleteAll();
         blogRepository.deleteById(id);
     }
 }
