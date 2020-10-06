@@ -130,4 +130,26 @@ public class BlogServiceImpl implements BlogService {
         commentRepository.deleteAll();
         blogRepository.deleteById(id);
     }
+
+    @Override
+    public Page<Blog> listBolg(Pageable pageable, BlogQuery blog) {
+        return blogRepository.findAll(new Specification<Blog>() {
+            @Override
+            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
+                List<Predicate> predicate = new ArrayList<>();
+                if (!"".equals(blog.getTitle()) && blog.getTitle() != null){
+                    predicate.add(cb.like(root.<String>get("title"),"%"+blog.getTitle()+"%"));
+                }
+                if(blog.getTypeId() != null){
+                    predicate.add(cb.equal(root.<Type>get("type").get("id"),blog.getTypeId()));
+                }
+                if(blog.isRecommend()){
+                    predicate.add(cb.equal(root.<Boolean>get("recommend"),blog.isRecommend()));
+                }
+                cq.where(predicate.toArray(new Predicate[predicate.size()]));
+                return null;
+            }
+        },pageable);
+    }
+
 }

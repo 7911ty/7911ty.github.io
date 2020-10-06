@@ -20,4 +20,6 @@ public interface BlogService {
 
     Blog updateBlog(Long id, Blog blog);
     void deleteBlog(Long id);
+
+    Page<Blog> listBolg(Pageable pageable, BlogQuery blogQuery);
 }

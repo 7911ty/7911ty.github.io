@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments::head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" type="image/x-ico" href="https://q1.qlogo.cn/g?b=qq&nk=376162374&s=100" />
@@ -10,9 +10,9 @@
     <!--me.css-->
     <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
 </head>
-<body>
+<body >
     <!--导航-->
-    <nav class="ui inverted attached segment m-padded-td-mini m-shadow-small">
+    <nav th:replace="_fragments::menu(2)" class="ui inverted attached segment m-padded-td-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui teal header item" style="font-family:Times">ADU</h2>
@@ -89,7 +89,7 @@
                         <!--文章图片-->
                         <div class="five wide column">
                             <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
-                                <img src="https://unsplash.it/800/400?image=1005" th:src="@{${blog.firstPicture}}" alt="" class="ui rounded image">
+                                <img src="https://unsplash.it/800/400?image=1005" th:src="@{${blog.firstpicture}}" alt="" class="ui rounded image">
                             </a>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
 
     <br><br>
     <!--底部-->
-    <footer class="ui inverted vertical segment m-padded-tb-massive">
+    <footer th:replace="_fragments::footer" class="ui inverted vertical segment m-padded-tb-massive">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
