@@ -36,20 +36,32 @@ public class BlogController {
     @Autowired
     private TagService tagService;
 
-    @GetMapping("/blogs")
+   /* @GetMapping("/blogs")
     public String blogs(@PageableDefault(size = 5, sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
                         BlogQuery blog, Model model) {
         model.addAttribute("types", typeService.listType());
         model.addAttribute("page", blogService.listBlog(pageable, blog));
         return LIST;
-    }
+    }*/
+   @GetMapping("/blogs")
+   public String blogs(@PageableDefault(size = 8,sort = {"updateTime"},direction = Sort.Direction.DESC)  Pageable pageable, BlogQuery blog, Model model){
+       model.addAttribute("types",typeService.listType());
+       model.addAttribute("page", blogService.listBolg(pageable,blog));
+       return LIST;
+   }
 
-    @PostMapping("/blogs/search")
-    public String search(@PageableDefault(size = 5, sort = "updateTime", direction = Sort.Direction.DESC) Pageable pageable,
+   /* @PostMapping("/blogs/search")
+    public String search(@PageableDefault(size = 5, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
                          BlogQuery blog, Model model) {
         model.addAttribute("page", blogService.listBlog(pageable, blog));
         return "admin/blogs :: bloglist";
-    }
+    }*/
+   @PostMapping("/blogs/search")
+   public String search(@PageableDefault(size = 8,sort = {"updateTime"},direction = Sort.Direction.DESC)  Pageable pageable, BlogQuery blog, Model model){
+       model.addAttribute("page", blogService.listBolg(pageable,blog));
+       return "admin/blogs :: blogList";
+   }
+
 
     @GetMapping("/blogs/input")
     public String input(Model model) {

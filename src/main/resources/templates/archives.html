@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-	<head>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="_fragments::head(~{::title})">
 		<meta charset="utf-8">
         <meta name="viewport" content="windth=device-width,initial-scale=1.0">
 		<title>归档</title>
@@ -9,7 +9,7 @@
 	</head>
 	<body>
         <!-- 导航-->
-        <nav class="ui inverted attached segment m-padded-tb-mini" > 
+        <nav th:replace="_fragments::menu(4)" class="ui inverted attached segment m-padded-tb-mini" >
             <div class="ui container">
                <div class="ui inverted secondary stackable menu ">
                    <h2 class="ui teal header item">Lty</h2>
@@ -32,10 +32,10 @@
                 <i class="sidebar icon"></i>
             </a>
         </nav>
-        <!-- 中间内容-->
+        <!--&lt;!&ndash; 中间内容&ndash;&gt;
         <div class="m-container-small m-padded-tb-big">
             <div class="ui container">
-                <!--header-->
+                &lt;!&ndash;header&ndash;&gt;
                 <div class="ui top attached padded segment">
                     <div class="ui middle aligned two column grid">
                         <div class="column">
@@ -78,81 +78,43 @@
                         </a>
                         
                     </div>
-                    <h3 class="ui center aligned header">2016</h3>
-                        <div class="ui fluid vertical menu">
-                            <a href="#"target="_blank" class="item">
-                                <span>
-                                    <i class="mini teal circle icon"></i>关于刻意练习的清单
-                                    <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
-                                </span>
-                                 <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-                            </a>
-                            <a href="#"target="_blank" class="item">
-                                <span>
-                                    <i class="mini teal circle icon"></i>关于刻意练习的清单
-                                    <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
-                                </span>
-                                 <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-                            </a>
-                            <a href="#"target="_blank" class="item">
-                                <span>
-                                    <i class="mini teal circle icon"></i>关于刻意练习的清单
-                                    <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
-                                </span>
-                                 <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-                            </a>
-                            <a href="#"target="_blank" class="item">
-                                <span>
-                                    <i class="mini teal circle icon"></i>关于刻意练习的清单
-                                    <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
-                                </span>
-                                 <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-                            </a>
-                            
-                        </div>
-                        <h3 class="ui center aligned header">2015</h3>
-                            <div class="ui fluid vertical menu">
-                                <a href="#"target="_blank" class="item">
-                                    <span>
-                                        <i class="mini teal circle icon"></i>关于刻意练习的清单
-                                        <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
-                                    </span>
-                                     <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-                                </a>
-                                <a href="#"target="_blank" class="item">
-                                    <span>
-                                        <i class="mini teal circle icon"></i>关于刻意练习的清单
-                                        <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
-                                    </span>
-                                     <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-                                </a>
-                                <a href="#"target="_blank" class="item">
-                                    <span>
-                                        <i class="mini teal circle icon"></i>关于刻意练习的清单
-                                        <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
-                                    </span>
-                                     <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-                                </a>
-                                <a href="#"target="_blank" class="item">
-                                    <span>
-                                        <i class="mini teal circle icon"></i>关于刻意练习的清单
-                                        <div class="ui teal basic left pointing label m-padded-mini">9月3日</div>
-                                    </span>
-                                     <div class="ui orange basic left pointing label m-padded-mini">原创</div>
-                                </a>
-                                
-                            </div>
-                    
 
+       <br> 
+       <br>-->
+        <!--中间内容-->
+        <div class="m-container-small m-padded-tb-big">
+            <div class="ui container">
+                <!--头部-->
+                <div class="ui top attached padded segment">
+                    <div class="ui middle aligned two column grid">
+                        <div class="column">
+                            <h3 class="ui teal header">归档</h3>
+                        </div>
+                        <div class="right aligned column">
+                            共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${blogCount}">14</h2> 篇博客
+                        </div>
+                    </div>
+                </div>
+                <th:block th:each="item : ${archiveMap}">
+                    <h3 class="ui center aligned header" th:text="${item.key}">2017</h3>
+                    <div class="ui fluid vertical menu">
+                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog : ${item.value}">
+                        <span>
+                            <i class="mini teal circle icon"></i>&nbsp;&nbsp;<span th:text="${blog.title}">测试数据</span>
+                            <div class="ui teal basic left pointing label m-padded-mini" th:text="${#dates.format(blog.updateTime,'MMMdd')}">>9月03</div>
+                        </span>
+                            <div class="ui orange basic left pointing label m-padded-mini" th:classappend="${blog.flag == null} ? hidden" th:text="${blog.flag}">>原创</div>
+                        </a>
+                    </div>
+                </th:block>
             </div>
         </div>
 
-       <br> 
-       <br>
+        <br><br>
        <br>
        
         <!-- 底部-->
-        <footer class="ui inverted vertical segment m-padded-tb-massive m-opacity">
+        <footer th:replace="_fragments::footer" class="ui inverted vertical segment m-padded-tb-massive m-opacity">
             <div class="ui center aligned container">
                 <div class="ui inverted divided stackable grid">
                     <div class="three wide column">
@@ -161,7 +123,7 @@
                         </div>
                     </div>
                     <div class="three wide column">
-                        <h4> <class="ui inverted header">最新博客</h4>
+                        <h4 class="ui inverted header">最新博客</h4>
                         <div class="ui inverted link list">
                         <a href="#" class="item">用户故事(User Story)</a>
                         <a href="#" class="item">用户故事(User Story)</a>
@@ -170,14 +132,14 @@
 
                     </div>
                     <div class="three wide column">
-                        <h4> <class="ui inverted header">联系我</h4>
+                        <h4 class="ui inverted header">联系我</h4>
                         <div class="ui inverted link list">
                         <a href="#" class="item">Email：130484715@qq.com</a>
                         <a href="#" class="item">QQ: 1304684715</a>
                         </div>
                     </div>
                     <div class="seven wide column">
-                        <h4> <class="ui inverted header">Blog</h4>
+                        <h4 class="ui inverted header">Blog</h4>
                         <p>这是我的个人博客、会分享关于编程、写作、思考相关的任何
                         内容，希望可以给来到这儿的人有所帮助...
                         </p>
